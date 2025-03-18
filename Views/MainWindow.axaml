@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Queue.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Queue.Views.MainWindow"
+        x:DataType="vm:MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Queue"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Введите элемент:" FontSize="16" Margin="0,0,0,10"/>
+        <TextBox x:Name="NewItemTextBox" KeyDown="NewItemTextBox_KeyDown" Width="300" Margin="0,0,0,10"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="Добавить" Width="100" Click="OnEnqueueButtonClick"/>
+            <Button Content="Удалить" Width="100" Click="OnDequeueButtonClick" Margin="10,0,0,0"/>
+            <Button Content="Очистить" Width="100" Click="OnClearButtonClick" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <TextBlock Text="Элементы очереди:" FontSize="16" Margin="0,10,0,10"/>
+        <TextBlock x:Name="QueueItemsTextBlock" FontSize="18" TextWrapping="Wrap" />
+
+        <TextBlock x:Name="NotificationTextBlock" FontSize="16" Foreground="Red" Margin="0,10,0,0"/>
+    </StackPanel>
+</Window>
